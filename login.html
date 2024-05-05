@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
+    <style>
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        .container {
+            width: 200%;
+            padding-top: 300px;
+
+            padding-left: 650px;
+        }
+    </style>
+</head>
+<body class="bg">
+    <div class="container d-flex align-items-center justify-content-center">
+        <div class="card p-5">
+            <form action="/login" method="post">
+
+                <div class="form-group mb-3">
+                    <h1 >Want to Add a Quote Login Here </h1>
+                    <input type="text" name="username" placeholder="Username" required class="form-control">
+                </div>
+                <div class="form-group mb-3">
+                    <input type="password" name="password" placeholder="Password" required class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Login</button>
+                {% if error %}
+                    <div class="alert alert-danger mt-3">{{ error }}</div>
+                {% endif %}
+            </form>
+        </div>
+    </div>
+</body>
+</html>
