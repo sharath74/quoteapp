@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quotes List</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-4">
+        <h1>Quotes</h1>
+        <a href="/add" class="btn btn-primary mb-2">Add New Quote</a>
+        <div class="list-group">
+            {% for quote in data %}
+                <div class="list-group-item">
+                    <h5 class="list-group-item-heading">{{ quote.text }}</h5>
+                    <p class="list-group-item-text">- {{ quote.author }}</p>
+                    <a href="/edit/{{ quote._id }}" class="btn btn-info">Edit</a>
+                    <a href="/delete/{{ quote._id }}" class="btn btn-danger">Delete</a>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
